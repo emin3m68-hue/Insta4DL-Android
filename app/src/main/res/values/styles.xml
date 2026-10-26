@@ -1,0 +1,12 @@
+<resources>
+    <style name="Insta4DLTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#AF3FEE</item>
+        <item name="android:statusBarColor">#120D23</item>
+        <item name="android:navigationBarColor">#120D23</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowBackground">#FFFFFF</item>
+    </style>
+</resources>
