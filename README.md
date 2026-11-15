@@ -1,165 +1,195 @@
 <div align="center">
-  <a href="https://www.insta4dl.com/">
-    <img src="./ICON-512.png" alt="Insta4DL Android app icon — free Instagram video, Reels, photo and story downloader" width="112" />
-  </a>
 
-  # Insta4DL for Android — Free Instagram Downloader APK
+<a href="https://www.insta4dl.com/"><img src="docs/assets/banner.png" alt="Insta4DL for Android – save Instagram Reels, videos, photos and stories" width="100%"></a>
 
-  **A lightweight Android WebView app for downloading publicly accessible Instagram Reels, videos, photos, stories and carousel posts through [Insta4DL.com](https://www.insta4dl.com/). No sign-up or Instagram login required.**
+<br>
 
-  [![Build Android APK](https://github.com/emin3m68-hue/Insta4DL-Android/actions/workflows/build-apk.yml/badge.svg?branch=main)](https://github.com/emin3m68-hue/Insta4DL-Android/actions/workflows/build-apk.yml)
-  ![Android 10+](https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white)
-  ![Version](https://img.shields.io/badge/version-1.0.0-blue)
-  ![Free to Use](https://img.shields.io/badge/price-free-brightgreen)
+[![Android CI](https://github.com/emin3m68-hue/Insta4DL-Android/actions/workflows/build-apk.yml/badge.svg?branch=main)](https://github.com/emin3m68-hue/Insta4DL-Android/actions/workflows/build-apk.yml)
+[![Latest release](https://img.shields.io/github/v/release/emin3m68-hue/Insta4DL-Android?label=release&color=A855F7)](https://github.com/emin3m68-hue/Insta4DL-Android/releases/latest)
+![Android 10+](https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white)
+![Permissions](https://img.shields.io/badge/permissions-Internet%20only-0EA5E9)
+![No ads SDK](https://img.shields.io/badge/ads%20SDK-none-22C55E)
 
-  **[Open Insta4DL Website](https://www.insta4dl.com/)** · **[Build / Get Android APK](https://github.com/emin3m68-hue/Insta4DL-Android/actions)** · **[View Source Code](https://github.com/emin3m68-hue/Insta4DL-Android)**
+**The official Android app for [Insta4DL.com](https://www.insta4dl.com/) – download public Instagram Reels, videos, photos, stories and carousels straight to your phone.**
+
+[**⬇ Download the APK**](https://github.com/emin3m68-hue/Insta4DL-Android/releases/latest) &nbsp;·&nbsp; [Website](https://www.insta4dl.com/) &nbsp;·&nbsp; [Report a bug](https://github.com/emin3m68-hue/Insta4DL-Android/issues/new/choose)
+
 </div>
 
 ---
 
-## What is Insta4DL for Android?
+## Highlights
 
-**Insta4DL** is a free Instagram downloader for Android, delivered as a lightweight native WebView wrapper around **[www.insta4dl.com](https://www.insta4dl.com/)**. It brings the mobile-friendly Insta4DL website into an Android app, making it easier to paste or share Instagram post links and save supported media to your phone.
+<table>
+<tr>
+<td width="33%" valign="top">
 
-Whether you want to save an **Instagram Reel**, download a **public Instagram video**, keep a **photo**, or access a supported **story or carousel**, the app provides a convenient way to use Insta4DL on your Android device.
+### ↗ Share to save
+In Instagram, tap **Share → Insta4DL**. The link opens in the app, ready to download.
 
-**Important:** Insta4DL for Android uses the website's existing downloading functionality. Availability depends on the public post, website service and media source. It does not bypass Instagram logins, private-account restrictions or other access controls.
+</td>
+<td width="33%" valign="top">
 
-## Features
+### ▣ One-tap paste
+Copied a link? The **Paste** button drops it into the downloader for you.
 
-- **Free Instagram downloader:** Access Insta4DL without paying for the Android app or creating an account.
-- **Instagram Reels and video downloads:** Open supported public Reels and video links using the Insta4DL website.
-- **Instagram photo, story and carousel support:** Use the website's available download tools for compatible public media.
-- **Share from Instagram:** Choose **Share → Insta4DL** on Android to send a link to the app.
-- **One-tap paste:** Paste a copied Instagram URL from your clipboard into the website.
-- **Save to Downloads:** Supported file downloads are saved under **`Downloads/Insta4DL`** using Android's download APIs.
-- **Direct and in-browser downloads:** Supports HTTPS file downloads and compatible `blob:` downloads where the installed Android System WebView allows them.
-- **Quick navigation:** Home, Paste, Files and Reload controls, plus Android Back navigation.
-- **No additional app ads:** The Android wrapper does not add its own advertising SDK; content shown by the website is separate.
-- **Minimal permissions:** The native Android project requests the **Internet** permission only.
+</td>
+<td width="33%" valign="top">
 
-## How to Download Instagram Reels, Videos and Photos on Android
+### ↓ Saved where you expect
+Files land in **`Downloads/Insta4DL`**. **Files** opens the folder in one tap.
 
-1. Open the **Insta4DL** app on your Android phone.
-2. Find a publicly accessible Instagram Reel, video, photo, story or carousel that the website supports.
-3. Copy its link from Instagram, or use **Share → Insta4DL** if that option appears on your device.
-4. Paste the URL into the Insta4DL website inside the app (or use the **Paste** shortcut).
-5. Follow the website's **Download** instructions for the available media.
-6. Open **Files** in the app or visit **`Downloads/Insta4DL`** on your device to find supported downloaded files.
+</td>
+</tr>
+<tr>
+<td valign="top">
 
-> Some Instagram links or media formats may not be available. The app cannot retrieve private or otherwise inaccessible content, and individual results depend on Insta4DL.com.
+### ✦ Full quality
+Reels and videos as HD MP4, photos at full size, whole carousels at once.
 
-## Download and Install the Android APK
+</td>
+<td valign="top">
 
-This repository builds an **installable debug APK** through GitHub Actions. You do not need Android Studio to run the cloud build.
+### 🔒 Private by design
+No sign-up and no Instagram login. The app asks for the **Internet** permission only.
 
-1. Open **[GitHub Actions — Insta4DL Android](https://github.com/emin3m68-hue/Insta4DL-Android/actions)**.
-2. Select the **Build Insta4DL APK** workflow.
-3. Open the latest successful run (green checkmark). If necessary, use **Run workflow** to create a new build.
-4. Scroll to **Artifacts** and download **`Insta4DL-debug-APK`**. GitHub may ask you to sign in to download workflow artifacts.
-5. Extract the downloaded ZIP file to find **`app-debug.apk`**.
-6. Transfer the APK to your Android device and open it to install. If prompted, allow installation from the file manager or browser you are using.
+</td>
+<td valign="top">
 
-**Android requirement:** Android 10 (API 29) or newer.
+### ⚡ Light and fast
+A small native wrapper with no ads or analytics SDKs, always running the latest website.
 
-**Build type:** Debug APK, suitable for testing and direct installation. A signed release build is recommended for wider distribution or publication in an app store. GitHub Actions artifact links are temporary; for a permanent public APK link, publish a signed file under **[GitHub Releases](https://github.com/emin3m68-hue/Insta4DL-Android/releases)**.
+</td>
+</tr>
+</table>
 
-## Build the APK from Source
+## Install
 
-### Option 1: GitHub Actions (recommended)
+1. Open the **[latest release](https://github.com/emin3m68-hue/Insta4DL-Android/releases/latest)** and download `Insta4DL-x.y.z.apk` on your phone.
+2. Open the file. If Android asks, allow installs from your browser or file manager.
+3. Launch **Insta4DL** – that's it.
 
-The repository contains **`.github/workflows/build-apk.yml`**, which uses Java 17, Gradle and the Android SDK available on GitHub's Ubuntu runner. Open the **Actions** tab and run **Build Insta4DL APK**. After a successful build, download the APK artifact.
+> **Requires Android 10 (API 29) or newer.** You can also install the app as a web app straight from [insta4dl.com/app](https://www.insta4dl.com/app/).
 
-### Option 2: Android Studio
+## How to use
 
-1. Clone or download this repository.
-2. Open the project in Android Studio.
-3. Install any requested Android SDK components and sync Gradle.
-4. Select **Build → Build Bundle(s) / APK(s) → Build APK(s)** (the menu wording may vary by Android Studio version).
-5. Find the debug APK at **`app/build/outputs/apk/debug/app-debug.apk`**.
+| Step | What to do |
+|---|---|
+| **1. Find a post** | Any public Reel, video, photo, story or carousel on Instagram. |
+| **2. Send it to the app** | **Share → Insta4DL**, or copy the link and tap **Paste**. |
+| **3. Download** | Pick the quality you want. The file is saved to `Downloads/Insta4DL`. |
 
-## Technical Details
+Private accounts and content that needs a login can't be downloaded – the app never asks for your Instagram account.
+
+## Build from source
+
+```bash
+git clone https://github.com/emin3m68-hue/Insta4DL-Android.git
+cd Insta4DL-Android
+./gradlew assembleDebug          # → app/build/outputs/apk/debug/app-debug.apk
+```
+
+You need **JDK 17** and the **Android SDK (API 35)**. Android Studio installs both and can open the project as is.
+
+Every push to `main` is built by **[Android CI](https://github.com/emin3m68-hue/Insta4DL-Android/actions/workflows/build-apk.yml)**; the debug APK is attached to each run as an artifact.
+
+<details>
+<summary><strong>Publishing a release</strong></summary>
+
+<br>
+
+Push a version tag and CI builds a release APK and publishes it on the **Releases** page with generated notes:
+
+```bash
+git tag v1.1.0
+git push origin v1.1.0
+```
+
+The version name comes from the tag (`v1.1.0` → `1.1.0`) and the version code from the CI run number.
+
+To sign releases with your own key, add these repository secrets (**Settings → Secrets and variables → Actions**):
+
+| Secret | Value |
+|---|---|
+| `KEYSTORE_BASE64` | Your `.jks` file, base64-encoded (`base64 -w0 release.jks`) |
+| `KEYSTORE_PASSWORD` | Keystore password |
+| `KEY_ALIAS` | Key alias |
+| `KEY_PASSWORD` | Key password |
+
+Without them the release APK is signed with the debug key: it installs fine, but keep using the same key once you start, or users will have to uninstall before updating.
+
+</details>
+
+<details>
+<summary><strong>Technical details</strong></summary>
+
+<br>
 
 | Setting | Value |
-| --- | --- |
+|---|---|
 | Application ID | `com.insta4dl.app` |
-| App version | `1.0.0` |
-| Android minimum | API 29 (Android 10) |
-| Target Android SDK | API 35 |
+| Min / target SDK | 29 (Android 10) / 35 |
 | Language | Java 17 |
-| Gradle | 8.10.2 |
-| Android Gradle Plugin | 8.7.3 |
-| WebView dependency | AndroidX WebKit 1.14.0 |
-| App permission | `android.permission.INTERNET` |
-| Downloads folder | `Downloads/Insta4DL` |
-| Website | [www.insta4dl.com](https://www.insta4dl.com/) |
-
-### Project Structure
+| Build | Gradle 8.10.2 (wrapper) · Android Gradle Plugin 8.7.3 |
+| WebView | AndroidX WebKit 1.14.0 |
+| Permissions | `android.permission.INTERNET` |
+| Downloads | `Downloads/Insta4DL` via `DownloadManager` / `MediaStore` |
 
 ```text
 Insta4DL-Android/
-├── .github/workflows/build-apk.yml
-├── app/
-│   ├── build.gradle
-│   └── src/main/
-│       ├── AndroidManifest.xml
-│       ├── assets/blob-bridge.js
-│       └── java/com/insta4dl/app/MainActivity.java
-├── build.gradle
-├── gradle.properties
-├── settings.gradle
-├── ICON-512.png
-└── README.md
+├── app/src/main/
+│   ├── java/com/insta4dl/app/MainActivity.java   WebView, downloads, share & paste
+│   ├── assets/blob-bridge.js                     saves in-page (blob:) downloads
+│   ├── res/                                      icons, theme, strings
+│   └── AndroidManifest.xml
+├── docs/assets/                                  banner, icon, social preview
+├── .github/workflows/build-apk.yml               CI and releases
+└── gradlew                                       Gradle wrapper
 ```
 
-The app displays the live website in Android WebView. It does not bundle a separate offline copy of Instagram media or the Insta4DL web service.
+The app shows the live website in an Android WebView, so new website features reach the app without an update.
 
-## Frequently Asked Questions
+</details>
 
-### Is Insta4DL for Android free?
+## FAQ
 
-Yes. The Android WebView app is free to use, and its core experience does not require user registration. Website features and availability remain subject to the Insta4DL service.
+<details>
+<summary><strong>Is it free?</strong></summary>
+<br>
+Yes. No account, no subscription, and the app adds no advertising SDK of its own.
+</details>
 
-### Do I need to sign in to Instagram?
+<details>
+<summary><strong>Do I need to log in to Instagram?</strong></summary>
+<br>
+No. The app works with public posts and never asks for your Instagram account.
+</details>
 
-No Instagram login is required to use the Android wrapper for supported publicly accessible links. It cannot download content that requires private-account authorization.
+<details>
+<summary><strong>Where are my downloads?</strong></summary>
+<br>
+In <code>Downloads/Insta4DL</code> on your phone. Tap <b>Files</b> in the app to open it.
+</details>
 
-### Can I download Instagram Reels on Android?
+<details>
+<summary><strong>A download doesn't work – what now?</strong></summary>
+<br>
+Try the same link on <a href="https://www.insta4dl.com/">insta4dl.com</a>. If it fails there too, the post is probably private, deleted or age-restricted. If it only fails in the app, please <a href="https://github.com/emin3m68-hue/Insta4DL-Android/issues/new/choose">open an issue</a> with your device and Android version.
+</details>
 
-You can use the app to submit a public Instagram Reel link to Insta4DL.com. Whether a specific Reel can be downloaded depends on the website and the video's accessibility.
+<details>
+<summary><strong>Why isn't it on Google Play?</strong></summary>
+<br>
+Apps that download from social networks are often removed from Google Play, so Insta4DL is distributed as an APK through GitHub Releases and as a web app on <a href="https://www.insta4dl.com/app/">insta4dl.com/app</a>.
+</details>
 
-### Can I save Instagram photos, stories or carousel posts?
+## Responsible use
 
-The app provides access to the photo, story and carousel tools available on the Insta4DL website. Support varies by media source and public accessibility.
-
-### Where are downloaded files saved?
-
-Supported downloads are stored in **`Downloads/Insta4DL`**. Tap **Files** in the app to open your phone's downloads view.
-
-### Why is a download unavailable or incomplete?
-
-Instagram may restrict access to media, or a public link may not expose a downloadable full-resolution file. Some large or in-browser-generated downloads also depend on your Android System WebView version and device resources. The Android wrapper cannot override those limitations.
-
-### Can I install the APK without Google Play?
-
-Yes. You can install the debug APK directly on a compatible Android device, subject to your device's installation security settings. A properly signed release APK is better for general distribution and consistent upgrades.
-
-## Responsible Use and Disclaimer
-
-Use Insta4DL only for media you own or are authorized to download, and respect copyright, privacy and platform rules. **Insta4DL is not affiliated with, endorsed by or sponsored by Instagram or Meta.** Instagram is a trademark of its respective owner.
-
-The Android app is a WebView client for Insta4DL.com. The website handles its own online services and any website-level data processing; the native wrapper does not add a separate analytics SDK. Third-party media availability can change at any time.
-
-## Website and Support
-
-- **Official website:** [https://www.insta4dl.com/](https://www.insta4dl.com/)
-- **Android source code:** [https://github.com/emin3m68-hue/Insta4DL-Android](https://github.com/emin3m68-hue/Insta4DL-Android)
-- **Report Android app issues:** [GitHub Issues](https://github.com/emin3m68-hue/Insta4DL-Android/issues)
+Download only content you own or have permission to use, and respect creators' rights and Instagram's terms.
+Insta4DL is an independent project and is **not affiliated with, endorsed or sponsored by Instagram or Meta**. Instagram is a trademark of its owner.
 
 ---
 
 <div align="center">
-  <strong>Insta4DL for Android — a free, convenient way to use the Insta4DL Instagram downloader on your phone.</strong>
-
-  [Visit Insta4DL.com](https://www.insta4dl.com/)
+<sub>Made for <a href="https://www.insta4dl.com/">insta4dl.com</a> · <a href="CHANGELOG.md">Changelog</a> · <a href="https://github.com/emin3m68-hue/Insta4DL-Android/issues">Issues</a></sub>
 </div>
