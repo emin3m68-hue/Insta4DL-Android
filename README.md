@@ -7,7 +7,7 @@
 [![Android CI](https://github.com/emin3m68-hue/Insta4DL-Android/actions/workflows/build-apk.yml/badge.svg?branch=main)](https://github.com/emin3m68-hue/Insta4DL-Android/actions/workflows/build-apk.yml)
 [![Latest release](https://img.shields.io/github/v/release/emin3m68-hue/Insta4DL-Android?label=release&color=A855F7)](https://github.com/emin3m68-hue/Insta4DL-Android/releases/latest)
 ![Android 10+](https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white)
-![Permissions](https://img.shields.io/badge/permissions-Internet%20only-0EA5E9)
+![Trusted Web Activity](https://img.shields.io/badge/engine-Chrome%20TWA-4285F4?logo=googlechrome&logoColor=white)
 ![No ads SDK](https://img.shields.io/badge/ads%20SDK-none-22C55E)
 
 **The official Android app for [Insta4DL.com](https://www.insta4dl.com/) – download public Instagram Reels, videos, photos, stories and carousels straight to your phone.**
@@ -30,14 +30,14 @@ In Instagram, tap **Share → Insta4DL**. The link opens in the app, ready to do
 </td>
 <td width="33%" valign="top">
 
-### ▣ One-tap paste
-Copied a link? The **Paste** button drops it into the downloader for you.
+### 🔔 Story alerts
+Turn on alerts for an account and get a notification the moment it posts a new story.
 
 </td>
 <td width="33%" valign="top">
 
 ### ↓ Saved where you expect
-Files land in **`Downloads/Insta4DL`**. **Files** opens the folder in one tap.
+Downloads go straight to your phone's **Downloads** folder, with readable file names.
 
 </td>
 </tr>
@@ -51,13 +51,13 @@ Reels and videos as HD MP4, photos at full size, whole carousels at once.
 <td valign="top">
 
 ### 🔒 Private by design
-No sign-up and no Instagram login. The app asks for the **Internet** permission only.
+No sign-up and no Instagram login. Only Internet access, plus notifications if you turn on alerts.
 
 </td>
 <td valign="top">
 
-### ⚡ Light and fast
-A small native wrapper with no ads or analytics SDKs, always running the latest website.
+### ⚡ Fast, full-screen, always current
+Runs on your browser's engine as a Trusted Web Activity – no address bar, no ads SDK, and new features arrive without updates.
 
 </td>
 </tr>
@@ -76,8 +76,8 @@ A small native wrapper with no ads or analytics SDKs, always running the latest 
 | Step | What to do |
 |---|---|
 | **1. Find a post** | Any public Reel, video, photo, story or carousel on Instagram. |
-| **2. Send it to the app** | **Share → Insta4DL**, or copy the link and tap **Paste**. |
-| **3. Download** | Pick the quality you want. The file is saved to `Downloads/Insta4DL`. |
+| **2. Send it to the app** | **Share → Insta4DL**, or copy the link and paste it into the box. |
+| **3. Download** | Pick the quality you want. The file is saved to your **Downloads** folder. |
 
 Private accounts and content that needs a login can't be downloaded – the app never asks for your Instagram account.
 
@@ -130,24 +130,23 @@ Without them the release APK is signed with the debug key: it installs fine, but
 | Application ID | `com.insta4dl.app` |
 | Min / target SDK | 29 (Android 10) / 35 |
 | Language | Java 17 |
+| App type | Trusted Web Activity ([android-browser-helper](https://github.com/GoogleChrome/android-browser-helper) 2.5.0) |
 | Build | Gradle 8.10.2 (wrapper) · Android Gradle Plugin 8.7.3 |
-| WebView | AndroidX WebKit 1.14.0 |
-| Permissions | `android.permission.INTERNET` |
-| Downloads | `Downloads/Insta4DL` via `DownloadManager` / `MediaStore` |
+| Fallback | In-app WebView when no TWA-capable browser is installed |
+| Permissions | `INTERNET`, `POST_NOTIFICATIONS` (story alerts) |
+| Domain verification | `https://www.insta4dl.com/.well-known/assetlinks.json` |
 
 ```text
 Insta4DL-Android/
 ├── app/src/main/
-│   ├── java/com/insta4dl/app/MainActivity.java   WebView, downloads, share & paste
-│   ├── assets/blob-bridge.js                     saves in-page (blob:) downloads
-│   ├── res/                                      icons, theme, strings
-│   └── AndroidManifest.xml
+│   ├── AndroidManifest.xml                       TWA launcher, share target, notifications
+│   └── res/                                      adaptive icon, splash, theme, strings
 ├── docs/assets/                                  banner, icon, social preview
 ├── .github/workflows/build-apk.yml               CI and releases
 └── gradlew                                       Gradle wrapper
 ```
 
-The app shows the live website in an Android WebView, so new website features reach the app without an update.
+The app opens insta4dl.com full-screen in the browser engine (Chrome, Samsung Internet, Edge…). Because the website vouches for the app through Digital Asset Links, no address bar is shown, and web push, downloads and the site's features work exactly as on the web.
 
 </details>
 
@@ -168,13 +167,19 @@ No. The app works with public posts and never asks for your Instagram account.
 <details>
 <summary><strong>Where are my downloads?</strong></summary>
 <br>
-In <code>Downloads/Insta4DL</code> on your phone. Tap <b>Files</b> in the app to open it.
+In your phone's <b>Downloads</b> folder (open the <b>Files</b> app → Downloads).
 </details>
 
 <details>
 <summary><strong>A download doesn't work – what now?</strong></summary>
 <br>
 Try the same link on <a href="https://www.insta4dl.com/">insta4dl.com</a>. If it fails there too, the post is probably private, deleted or age-restricted. If it only fails in the app, please <a href="https://github.com/emin3m68-hue/Insta4DL-Android/issues/new/choose">open an issue</a> with your device and Android version.
+</details>
+
+<details>
+<summary><strong>Do I need Chrome?</strong></summary>
+<br>
+No. Chrome, Samsung Internet, Edge and other modern browsers run the app full-screen. Without one of them it falls back to a built-in WebView, which works too (story alerts need a browser).
 </details>
 
 <details>

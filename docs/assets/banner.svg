@@ -20,7 +20,7 @@
     <rect x="90" y="400" width="148" height="44" rx="22" fill="#fff" fill-opacity=".1" stroke="#fff" stroke-opacity=".18"/><text x="164" y="428" text-anchor="middle">No login</text>
     <rect x="252" y="400" width="148" height="44" rx="22" fill="#fff" fill-opacity=".1" stroke="#fff" stroke-opacity=".18"/><text x="326" y="428" text-anchor="middle">HD quality</text>
     <rect x="414" y="400" width="170" height="44" rx="22" fill="#fff" fill-opacity=".1" stroke="#fff" stroke-opacity=".18"/><text x="499" y="428" text-anchor="middle">Share → Save</text>
-    <rect x="598" y="400" width="118" height="44" rx="22" fill="#fff" fill-opacity=".1" stroke="#fff" stroke-opacity=".18"/><text x="657" y="428" text-anchor="middle">Free</text>
+    <rect x="598" y="400" width="150" height="44" rx="22" fill="#fff" fill-opacity=".1" stroke="#fff" stroke-opacity=".18"/><text x="673" y="428" text-anchor="middle">Story alerts</text>
   </g>
 
   <g transform="translate(888 48) rotate(4)" filter="url(#sh)">
@@ -39,9 +39,7 @@
     <path d="M125 292l26 18-26 18z" fill="#A855F7"/>
     <rect x="44" y="368" width="88" height="20" rx="10" fill="url(#btn)"/>
     <rect x="140" y="368" width="86" height="20" rx="10" fill="#EDE9FE"/>
-    <rect x="12" y="430" width="246" height="58" rx="0" fill="#120D23"/>
-    <g font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#E9E3FF" text-anchor="middle">
-      <text x="48" y="464">Home</text><text x="107" y="464">Paste</text><text x="166" y="464">Files</text><text x="223" y="464">Reload</text>
-    </g>
+    <rect x="30" y="414" width="210" height="44" rx="14" fill="#fff" fill-opacity=".08"/>
+    <text x="135" y="441" text-anchor="middle" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="600" fill="#E9E3FF">🔔  Story alerts on</text>
   </g>
 </svg>
