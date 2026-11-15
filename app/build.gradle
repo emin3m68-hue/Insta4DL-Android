@@ -3,8 +3,8 @@ plugins {
 }
 
 // Version comes from the release tag in CI (v1.2.3 → 1.2.3); local builds use the defaults below.
-def appVersionName = System.getenv('VERSION_NAME') ?: '1.0.0'
-def appVersionCode = (System.getenv('VERSION_CODE') ?: '1') as Integer
+def appVersionName = System.getenv('VERSION_NAME') ?: '2.0.0'
+def appVersionCode = (System.getenv('VERSION_CODE') ?: '2') as Integer
 
 // Release signing is read from the environment, so no key ever lives in the repository.
 // Without these variables the release build falls back to the debug key (installable, not for stores).
@@ -48,5 +48,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.webkit:webkit:1.14.0'
+    // Trusted Web Activity launcher, splash, share target, notification delegation and WebView fallback.
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
 }
