@@ -130,7 +130,7 @@ Without them the release APK is signed with the debug key: it installs fine, but
 | Application ID | `com.insta4dl.app` |
 | Min / target SDK | 29 (Android 10) / 35 |
 | Language | Java 17 |
-| App type | Trusted Web Activity ([android-browser-helper](https://github.com/GoogleChrome/android-browser-helper) 2.7.4) |
+| App type | Trusted Web Activity ([android-browser-helper](https://github.com/GoogleChrome/android-browser-helper) 2.5.0) |
 | Build | Gradle 8.10.2 (wrapper) · Android Gradle Plugin 8.7.3 |
 | Fallback | In-app WebView when no TWA-capable browser is installed |
 | Permissions | `INTERNET`, `POST_NOTIFICATIONS` (story alerts) |
