@@ -2,6 +2,15 @@ plugins {
     id 'com.android.application'
 }
 
+// Version comes from the release tag in CI (v1.2.3 → 1.2.3); local builds use the defaults below.
+def appVersionName = System.getenv('VERSION_NAME') ?: '1.0.0'
+def appVersionCode = (System.getenv('VERSION_CODE') ?: '1') as Integer
+
+// Release signing is read from the environment, so no key ever lives in the repository.
+// Without these variables the release build falls back to the debug key (installable, not for stores).
+def keystoreFile = System.getenv('KEYSTORE_FILE')
+def hasReleaseKey = keystoreFile != null && file(keystoreFile).exists()
+
 android {
     namespace 'com.insta4dl.app'
     compileSdk 35
@@ -10,16 +19,25 @@ android {
         applicationId 'com.insta4dl.app'
         minSdk 29
         targetSdk 35
-        versionCode 1
-        versionName '1.0.0'
+        versionCode appVersionCode
+        versionName appVersionName
+    }
+
+    signingConfigs {
+        release {
+            if (hasReleaseKey) {
+                storeFile file(keystoreFile)
+                storePassword System.getenv('KEYSTORE_PASSWORD')
+                keyAlias System.getenv('KEY_ALIAS')
+                keyPassword System.getenv('KEY_PASSWORD')
+            }
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
-        }
-        debug {
-            debuggable true
+            signingConfig hasReleaseKey ? signingConfigs.release : signingConfigs.debug
         }
     }
 
