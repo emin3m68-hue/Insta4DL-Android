@@ -1,36 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Insta4DL for Android – a Trusted Web Activity (TWA).
+    insta4dl.com runs full-screen in the user's browser engine (Chrome or another TWA browser),
+    so web push, downloads and the site's own features work exactly as on the web.
+    Without a TWA-capable browser the app falls back to an in-app WebView.
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Story alerts: lets the website's notifications appear as this app's notifications (Android 13+). -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <queries>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+    </queries>
 
     <application
-        android:label="@string/app_name"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher"
         android:allowBackup="false"
-        android:usesCleartextTraffic="false"
-        android:theme="@style/Insta4DLTheme">
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Insta4DL">
+
+        <meta-data
+            android:name="asset_statements"
+            android:resource="@string/asset_statements" />
+
         <activity
-            android:name=".MainActivity"
+            android:name="com.google.androidbrowserhelper.trusted.LauncherActivity"
+            android:alwaysRetainTaskState="true"
             android:exported="true"
-            android:launchMode="singleTop"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="adjustResize">
+            android:label="@string/app_name">
+
+            <meta-data android:name="android.support.customtabs.trusted.DEFAULT_URL" android:value="@string/launch_url" />
+            <meta-data android:name="android.support.customtabs.trusted.STATUS_BAR_COLOR" android:resource="@color/brand_navy" />
+            <meta-data android:name="android.support.customtabs.trusted.STATUS_BAR_COLOR_DARK" android:resource="@color/brand_navy" />
+            <meta-data android:name="android.support.customtabs.trusted.NAVIGATION_BAR_COLOR" android:resource="@color/brand_navy" />
+            <meta-data android:name="android.support.customtabs.trusted.NAVIGATION_BAR_COLOR_DARK" android:resource="@color/brand_navy" />
+            <meta-data android:name="android.support.customtabs.trusted.SPLASH_IMAGE_DRAWABLE" android:resource="@drawable/splash_logo" />
+            <meta-data android:name="android.support.customtabs.trusted.SPLASH_SCREEN_BACKGROUND_COLOR" android:resource="@color/brand_navy" />
+            <meta-data android:name="android.support.customtabs.trusted.SPLASH_SCREEN_FADE_OUT_DURATION" android:value="300" />
+            <meta-data android:name="android.support.customtabs.trusted.FILE_PROVIDER_AUTHORITY" android:value="@string/provider_authority" />
+            <meta-data android:name="android.support.customtabs.trusted.METADATA_SHARE_TARGET" android:resource="@string/share_target" />
+            <meta-data android:name="android.support.customtabs.trusted.FALLBACK_STRATEGY" android:value="webview" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- Share → Insta4DL from Instagram and other apps. -->
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/plain" />
             </intent-filter>
-            <intent-filter>
+
+            <!-- insta4dl.com links open in the app. -->
+            <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" android:host="www.insta4dl.com" />
-                <data android:scheme="https" android:host="insta4dl.com" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.google.androidbrowserhelper.trusted.FocusActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.google.androidbrowserhelper.trusted.WebViewFallbackActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:exported="false" />
+
+        <activity
+            android:name="com.google.androidbrowserhelper.trusted.NotificationPermissionRequestActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="@string/provider_authority"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <!-- Notification delegation: website notifications use this app's name and icon. -->
+        <service
+            android:name="com.google.androidbrowserhelper.trusted.DelegationService"
+            android:enabled="true"
+            android:exported="true">
+            <meta-data
+                android:name="android.support.customtabs.trusted.SMALL_ICON"
+                android:resource="@drawable/ic_notification" />
+            <intent-filter>
+                <action android:name="android.support.customtabs.trusted.TRUSTED_WEB_ACTIVITY_SERVICE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
     </application>
 </manifest>

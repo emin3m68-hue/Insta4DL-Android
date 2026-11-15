@@ -1,3 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Insta4DL</string>
+    <string name="launch_url">https://www.insta4dl.com/?source=twa</string>
+    <string name="provider_authority">com.insta4dl.app.fileprovider</string>
+
+    <!-- Digital Asset Links: the website (/.well-known/assetlinks.json) vouches for this app,
+         which lets it open full-screen without a browser bar. -->
+    <string name="asset_statements" translatable="false">
+        [{
+            \"relation\": [\"delegate_permission/common.handle_all_urls\"],
+            \"target\": {\"namespace\": \"web\", \"site\": \"https://www.insta4dl.com\"}
+        }]
+    </string>
+
+    <!-- "Share → Insta4DL": shared links open the downloader, same as the web app's share_target. -->
+    <string name="share_target" translatable="false">
+        {
+            \"action\": \"https://www.insta4dl.com/\",
+            \"method\": \"GET\",
+            \"params\": {\"title\": \"title\", \"text\": \"text\", \"url\": \"url\"}
+        }
+    </string>
 </resources>

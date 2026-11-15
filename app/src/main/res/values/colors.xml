@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Same navy as the website's theme_color, so app chrome, splash and site blend together. -->
+    <color name="brand_navy">#FF061235</color>
+    <color name="brand_purple">#FF7839CC</color>
+    <color name="brand_pink">#FFDB3190</color>
+</resources>
