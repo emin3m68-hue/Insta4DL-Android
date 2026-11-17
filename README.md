@@ -193,8 +193,12 @@ Apps that download from social networks are often removed from Google Play, so I
 Download only content you own or have permission to use, and respect creators' rights and Instagram's terms.
 Insta4DL is an independent project and is **not affiliated with, endorsed or sponsored by Instagram or Meta**. Instagram is a trademark of its owner.
 
+## License
+
+[MIT](LICENSE) © Insta4DL. The app's code is open source; the insta4dl.com website and service it opens are not part of this repository.
+
 ---
 
 <div align="center">
-<sub>Made for <a href="https://www.insta4dl.com/">insta4dl.com</a> · <a href="CHANGELOG.md">Changelog</a> · <a href="https://github.com/emin3m68-hue/Insta4DL-Android/issues">Issues</a></sub>
+<sub>Made for <a href="https://www.insta4dl.com/">insta4dl.com</a> · <a href="CHANGELOG.md">Changelog</a> · <a href="LICENSE">MIT License</a> · <a href="https://github.com/emin3m68-hue/Insta4DL-Android/issues">Issues</a></sub>
 </div>
